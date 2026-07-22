@@ -233,6 +233,27 @@
   }
   .success-link:hover{ transform:translateY(-2px); }
 
+  .social-note{
+    color:var(--text-dim); font-size:13.5px; margin:-14px 0 22px; opacity:.85;
+  }
+  .social-title{
+    font-size:12px; text-transform:uppercase; letter-spacing:.14em;
+    color:var(--cyan-soft); font-weight:600; margin:6px 0 14px;
+  }
+  .social-links{
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .social-link{
+    display:block; padding:13px 18px; border-radius:12px;
+    background:rgba(18,7,32,0.55); border:1px solid rgba(182,245,255,0.18);
+    color:var(--text); text-decoration:none; font-size:14px; font-weight:500;
+    text-align:left; transition:all .2s ease;
+  }
+  .social-link:hover{
+    border-color:var(--cyan); background:rgba(95,233,255,0.1);
+    transform:translateX(4px);
+  }
+
   .footer-note{
     text-align:center; font-size:12px; color:var(--text-dim); opacity:.7;
     margin-top:26px; letter-spacing:.03em;
@@ -274,6 +295,7 @@
   <h1>ABC de tu<span>Futuro ♥</span></h1>
   <p class="subtitle">
     Inscríbete y explora las carreras de la UNMSM junto a estudiantes destacados.
+    <br>
     3 días · 3 áreas · +30 carreras. Virtual y gratuito.
   </p>
 
@@ -327,9 +349,20 @@
     <div class="success-icon">✓</div>
     <h2>¡Gracias por inscribirte!</h2>
     <p>Tu registro quedó confirmado. Nos vemos del 31 de julio al 2 de agosto, de 6:00 a 8:00 pm.</p>
-    <a class="success-link" id="successLink" href="https://chat.whatsapp.com/PEGA_AQUI_TU_LINK" target="_blank" rel="noopener">
-      Únete al grupo del evento →
-    </a>
+    <p class="social-note">Mantente atento a nuestras redes sociales para tener más información del evento.</p>
+
+    <p class="social-title">Síguenos en nuestras redes sociales</p>
+    <div class="social-links">
+      <a class="social-link" href="https://whatsapp.com/channel/0029Vb5kPCvDZ4LV6imRCA08" target="_blank" rel="noopener">
+        📣 Canal de WhatsApp — Perrovaca Informa | LEAD UNMSM
+      </a>
+      <a class="social-link" href="https://www.instagram.com/lead_unmsm?igsh=MWVua2FveGVwZHJ6Yg==" target="_blank" rel="noopener">
+        📷 Instagram — @lead_unmsm
+      </a>
+      <a class="social-link" href="https://www.linkedin.com/company/lead-unmsm/" target="_blank" rel="noopener">
+        💼 LinkedIn — LEAD UNMSM
+      </a>
+    </div>
   </div>
 
   <p class="footer-note">ABC de tu Futuro · LEAD UNMSM · 2026</p>
@@ -353,7 +386,7 @@
   }
 
   // ⚠️ Pega aquí la URL de tu Web App de Apps Script (paso 6 del Codigo.gs)
-  const SCRIPT_URL = "PEGA_AQUI_TU_URL_DE_APPS_SCRIPT";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwc6h3mW4iSS6dGuJuedcxxePi8bjG0Haos5VYPBj5aqjrpEGGPu57unY-137pC71gLOg/exec";
 
   const form = document.getElementById('regForm');
   const statusEl = document.getElementById('status');
