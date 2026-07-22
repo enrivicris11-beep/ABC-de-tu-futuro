@@ -236,6 +236,35 @@
   .social-note{
     color:var(--text-dim); font-size:13.5px; margin:-14px 0 22px; opacity:.85;
   }
+  .whatsapp-cta{
+    background:linear-gradient(135deg, rgba(37,211,102,0.16), rgba(95,233,255,0.1));
+    border:1px solid rgba(95,233,255,0.35);
+    border-radius:18px;
+    padding:22px 20px 24px;
+    margin:0 0 26px;
+  }
+  .whatsapp-title{
+    font-family:'Baloo 2', sans-serif; font-weight:800; font-size:17px;
+    color:#fff; margin:0 0 3px; letter-spacing:.01em;
+  }
+  .whatsapp-sub{
+    font-size:12.5px; color:var(--text-dim); margin:0 0 16px;
+  }
+  .whatsapp-qr{
+    width:140px; height:140px; border-radius:12px;
+    background:#fff; padding:8px; margin:0 auto 16px; display:block;
+    box-shadow:0 10px 30px -10px rgba(0,0,0,0.5);
+  }
+  .whatsapp-btn{
+    display:inline-block; padding:12px 24px; border-radius:12px;
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:14.5px;
+    color:#0d0420; text-decoration:none;
+    background:linear-gradient(135deg, #25D366, #5fe9ff);
+    box-shadow:0 10px 24px -8px rgba(37,211,102,0.5);
+    transition:transform .15s ease;
+  }
+  .whatsapp-btn:hover{ transform:translateY(-2px); }
+
   .social-title{
     font-size:12px; text-transform:uppercase; letter-spacing:.14em;
     color:var(--cyan-soft); font-weight:600; margin:6px 0 14px;
@@ -350,6 +379,15 @@
     <h2>¡Gracias por inscribirte!</h2>
     <p>Tu registro quedó confirmado. Nos vemos del 31 de julio al 2 de agosto, de 6:00 a 8:00 pm.</p>
     <p class="social-note">Mantente atento a nuestras redes sociales para tener más información del evento.</p>
+
+    <div class="whatsapp-cta">
+      <p class="whatsapp-title">Únete al grupo del evento</p>
+      <p class="whatsapp-sub">para mantenerte al tanto del evento</p>
+      <img class="whatsapp-qr" src="qr-whatsapp.png" alt="QR del grupo de WhatsApp">
+      <a class="whatsapp-btn" href="https://chat.whatsapp.com/DAVyne1dT8nI6uBIcLNCGA?s=cl&p=i&mlu=0&amv=1" target="_blank" rel="noopener">
+        📣 Abrir grupo de WhatsApp
+      </a>
+    </div>
 
     <p class="social-title">Síguenos en nuestras redes sociales</p>
     <div class="social-links">
