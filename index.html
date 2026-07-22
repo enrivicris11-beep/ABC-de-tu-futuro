@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC de tu Futuro — Inscripción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#120720;
+    --bg-mid:#2a0f52;
+    --bg-mid2:#4b1370;
+    --magenta:#ff5ea8;
+    --cyan:#5fe9ff;
+    --cyan-soft:#b6f5ff;
+    --gold:#ffd166;
+    --text:#f4eeff;
+    --text-dim:#c9b8e8;
+    --card-bg:rgba(26,10,48,0.55);
+    --card-border:rgba(182,245,255,0.25);
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:'Poppins',sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(ellipse 90% 60% at 20% 0%, rgba(255,94,168,0.35), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 85% 15%, rgba(95,233,255,0.25), transparent 55%),
+      radial-gradient(ellipse 100% 80% at 50% 100%, rgba(75,19,112,0.9), transparent 60%),
+      linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 55%, var(--bg-deep) 100%);
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* Estrellas */
+  .stars{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+  }
+  .star{
+    position:absolute; background:#fff; border-radius:50%;
+    opacity:.8; animation:twinkle 3.5s ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{opacity:.15; transform:scale(1);}
+    50%{opacity:1; transform:scale(1.4);}
+  }
+
+  /* Facetas low-poly decorativas, eco del papercraft del flyer */
+  .facet{
+    position:fixed; z-index:0; pointer-events:none; opacity:.35;
+    filter:blur(0px);
+  }
+  .facet svg{display:block;}
+
+  .wrap{
+    position:relative; z-index:1;
+    max-width:640px; margin:0 auto;
+    padding:56px 20px 80px;
+  }
+
+  .eyebrow{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    text-transform:uppercase; letter-spacing:.18em; font-size:12px;
+    color:var(--cyan-soft); font-weight:600; margin-bottom:10px;
+  }
+  .eyebrow::before, .eyebrow::after{
+    content:""; height:1px; width:28px;
+    background:linear-gradient(90deg, transparent, var(--cyan-soft));
+  }
+  .eyebrow::after{ background:linear-gradient(90deg, var(--cyan-soft), transparent); }
+
+  h1{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:800;
+    text-align:center;
+    font-size:clamp(38px, 8vw, 58px);
+    line-height:0.95;
+    margin:0 0 6px;
+    background:linear-gradient(180deg, #ffffff 10%, var(--cyan-soft) 55%, var(--cyan) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    text-shadow:0 0 40px rgba(95,233,255,0.35);
+  }
+  h1 span{
+    display:block;
+    font-size:.6em;
+    background:linear-gradient(180deg, #ffe3f2 10%, var(--magenta) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+
+  .subtitle{
+    text-align:center; color:var(--text-dim); font-size:15px;
+    max-width:440px; margin:14px auto 30px; line-height:1.5;
+  }
+
+  .badges{
+    display:flex; justify-content:center; gap:10px; flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .badge{
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:13px;
+    padding:8px 16px; border-radius:999px;
+    background:linear-gradient(135deg, rgba(95,233,255,0.15), rgba(255,94,168,0.15));
+    border:1px solid var(--card-border);
+    color:var(--cyan-soft);
+    clip-path:polygon(6% 0, 100% 0, 94% 100%, 0 100%);
+  }
+
+  form{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:26px;
+    padding:34px 28px;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:0 30px 80px -20px rgba(75,19,112,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
+    position:relative;
+  }
+
+  /* esquina low-poly, eco del papercraft */
+  form::before{
+    content:"";
+    position:absolute; top:-1px; right:-1px; width:70px; height:70px;
+    background:linear-gradient(135deg, var(--magenta), transparent 70%);
+    clip-path:polygon(100% 0, 100% 100%, 0 0);
+    opacity:.5; border-radius:0 26px 0 0;
+  }
+
+  label{
+    display:block; font-size:13px; font-weight:600;
+    color:var(--cyan-soft); margin:20px 0 7px;
+    letter-spacing:.02em;
+  }
+  label:first-of-type{margin-top:0;}
+
+  input[type="text"], input[type="email"], input[type="tel"], select{
+    width:100%; padding:13px 15px; font-size:15px; font-family:'Poppins',sans-serif;
+    background:rgba(18,7,32,0.55);
+    border:1px solid rgba(182,245,255,0.18);
+    border-radius:12px; color:var(--text);
+    outline:none; transition:border-color .2s, box-shadow .2s;
+  }
+  input::placeholder{color:#8677a8;}
+  input:focus, select:focus{
+    border-color:var(--cyan);
+    box-shadow:0 0 0 3px rgba(95,233,255,0.18);
+  }
+  select{ appearance:none; cursor:pointer; }
+  select option{ background:#1a0a30; color:#fff; }
+
+  .select-wrap{ position:relative; }
+  .select-wrap::after{
+    content:"▾"; position:absolute; right:16px; top:50%; transform:translateY(-50%);
+    color:var(--cyan-soft); pointer-events:none; font-size:13px;
+  }
+
+  fieldset{ border:none; padding:0; margin:0; }
+  .check-row{
+    display:flex; flex-wrap:wrap; gap:10px; margin-top:4px;
+  }
+  .check-pill{
+    position:relative;
+  }
+  .check-pill input{ position:absolute; opacity:0; inset:0; cursor:pointer; margin:0; width:100%; height:100%; }
+  .check-pill span{
+    display:block; padding:10px 16px; border-radius:12px; font-size:13.5px; font-weight:500;
+    background:rgba(18,7,32,0.55); border:1px solid rgba(182,245,255,0.18);
+    color:var(--text-dim); transition:all .2s; cursor:pointer;
+  }
+  .check-pill input:checked + span{
+    background:linear-gradient(135deg, rgba(95,233,255,0.25), rgba(255,94,168,0.2));
+    border-color:var(--cyan); color:#fff; box-shadow:0 0 0 1px var(--cyan);
+  }
+
+  button{
+    width:100%; margin-top:30px; padding:16px;
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:18px;
+    color:#150826; border:none; border-radius:14px; cursor:pointer;
+    background:linear-gradient(135deg, var(--cyan) 0%, var(--cyan-soft) 45%, var(--gold) 120%);
+    box-shadow:0 12px 30px -8px rgba(95,233,255,0.55);
+    transition:transform .15s ease, box-shadow .15s ease;
+    letter-spacing:.02em;
+  }
+  button:hover{ transform:translateY(-2px); box-shadow:0 16px 36px -8px rgba(95,233,255,0.7); }
+  button:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
+
+  .status{
+    text-align:center; margin-top:18px; font-size:14px; min-height:20px;
+    font-weight:500;
+  }
+  .status.ok{ color:#7dffb0; }
+  .status.err{ color:#ff8fa3; }
+
+  .success-view{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:26px;
+    padding:44px 28px;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:0 30px 80px -20px rgba(75,19,112,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
+    text-align:center;
+  }
+  .success-icon{
+    width:64px; height:64px; margin:0 auto 18px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--cyan), var(--cyan-soft));
+    color:#0d0420; font-size:32px; font-weight:800;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 40px rgba(95,233,255,0.5);
+  }
+  .success-view h2{
+    font-family:'Baloo 2', sans-serif; font-size:26px; margin:0 0 10px;
+    background:linear-gradient(180deg, #ffffff 10%, var(--cyan-soft) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .success-view p{
+    color:var(--text-dim); font-size:14.5px; line-height:1.6; margin:0 0 24px;
+  }
+  .success-link{
+    display:inline-block; padding:14px 26px; border-radius:14px;
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:15px;
+    color:#150826; text-decoration:none;
+    background:linear-gradient(135deg, var(--cyan) 0%, var(--cyan-soft) 45%, var(--gold) 120%);
+    box-shadow:0 12px 30px -8px rgba(95,233,255,0.55);
+    transition:transform .15s ease;
+  }
+  .success-link:hover{ transform:translateY(-2px); }
+
+  .footer-note{
+    text-align:center; font-size:12px; color:var(--text-dim); opacity:.7;
+    margin-top:26px; letter-spacing:.03em;
+  }
+
+  @media (max-width:480px){
+    form{ padding:28px 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .star{ animation:none; opacity:.6; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<!-- Facetas low-poly decorativas -->
+<div class="facet" style="top:-40px; left:-40px; width:180px;">
+  <svg viewBox="0 0 180 180" width="180" height="180">
+    <polygon points="0,0 180,20 60,180 0,120" fill="url(#g1)"/>
+    <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5fe9ff"/><stop offset="100%" stop-color="#4b1370"/>
+    </linearGradient></defs>
+  </svg>
+</div>
+<div class="facet" style="bottom:-60px; right:-50px; width:220px;">
+  <svg viewBox="0 0 220 220" width="220" height="220">
+    <polygon points="220,220 0,200 140,0 220,80" fill="url(#g2)"/>
+    <defs><linearGradient id="g2" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#ff5ea8"/><stop offset="100%" stop-color="#2a0f52"/>
+    </linearGradient></defs>
+  </svg>
+</div>
+
+<div class="wrap">
+  <div class="eyebrow">LEAD UNMSM</div>
+  <h1>ABC de tu<span>Futuro ♥</span></h1>
+  <p class="subtitle">
+    Inscríbete y explora las carreras de la UNMSM junto a estudiantes destacados.
+    3 días · 3 áreas · +30 carreras. Virtual y gratuito.
+  </p>
+
+  <div class="badges">
+    <span class="badge">31 Jul – 02 Ago</span>
+    <span class="badge">6:00 – 8:00 pm</span>
+    <span class="badge">Ingreso gratuito</span>
+  </div>
+
+  <form id="regForm">
+    <label for="nombre">Nombre completo</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Ej. María Fernanda Quispe" required>
+
+    <label for="correo">Correo electrónico</label>
+    <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+
+    <label for="celular">Celular / WhatsApp</label>
+    <input type="tel" id="celular" name="celular" placeholder="9xx xxx xxx" required>
+
+    <label for="institucion">Colegio o institución actual</label>
+    <input type="text" id="institucion" name="institucion" placeholder="Ej. I.E. José María Arguedas" required>
+
+    <label for="area">Área de tu interés</label>
+    <div class="select-wrap">
+      <select id="area" name="area" required>
+        <option value="" disabled selected>Selecciona un área</option>
+        <option value="A - Salud">Área A — Salud</option>
+        <option value="B - Ciencias Básicas">Área B — Ciencias Básicas</option>
+        <option value="C - Ingeniería">Área C — Ingeniería</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </div>
+
+    <label for="comoTeEnteraste">¿Cómo te enteraste del evento? (opcional)</label>
+    <div class="select-wrap">
+      <select id="comoTeEnteraste" name="comoTeEnteraste">
+        <option value="" selected>Selecciona una opción</option>
+        <option value="Redes sociales">Redes sociales</option>
+        <option value="Un amigo/familiar">Un amigo o familiar</option>
+        <option value="Colegio">Mi colegio</option>
+        <option value="LEAD UNMSM">LEAD UNMSM</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </div>
+
+    <button type="submit" id="submitBtn">Inscribirme al evento</button>
+    <p class="status" id="status"></p>
+  </form>
+
+  <div id="successView" class="success-view" hidden>
+    <div class="success-icon">✓</div>
+    <h2>¡Gracias por inscribirte!</h2>
+    <p>Tu registro quedó confirmado. Nos vemos del 31 de julio al 2 de agosto, de 6:00 a 8:00 pm.</p>
+    <a class="success-link" id="successLink" href="https://chat.whatsapp.com/PEGA_AQUI_TU_LINK" target="_blank" rel="noopener">
+      Únete al grupo del evento →
+    </a>
+  </div>
+
+  <p class="footer-note">ABC de tu Futuro · LEAD UNMSM · 2026</p>
+</div>
+
+<script>
+  // Generar estrellas
+  const starsContainer = document.getElementById('stars');
+  const N = 90;
+  for(let i=0;i<N;i++){
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random()*2.4 + 0.6;
+    s.style.width = size+'px';
+    s.style.height = size+'px';
+    s.style.left = Math.random()*100+'vw';
+    s.style.top = Math.random()*100+'vh';
+    s.style.animationDelay = (Math.random()*3.5)+'s';
+    s.style.animationDuration = (2.5 + Math.random()*3)+'s';
+    starsContainer.appendChild(s);
+  }
+
+  // ⚠️ Pega aquí la URL de tu Web App de Apps Script (paso 6 del Codigo.gs)
+  const SCRIPT_URL = "PEGA_AQUI_TU_URL_DE_APPS_SCRIPT";
+
+  const form = document.getElementById('regForm');
+  const statusEl = document.getElementById('status');
+  const btn = document.getElementById('submitBtn');
+  const successView = document.getElementById('successView');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    if(SCRIPT_URL.includes("PEGA_AQUI")){
+      statusEl.textContent = "Falta configurar la URL del Apps Script en el código.";
+      statusEl.className = "status err";
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Enviando...";
+    statusEl.textContent = "";
+
+    const formData = new FormData(form);
+
+    try{
+      // Apps Script Web Apps no devuelven headers CORS legibles,
+      // por eso usamos no-cors y asumimos éxito si no hay error de red.
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      });
+
+      form.hidden = true;
+      successView.hidden = false;
+
+    }catch(err){
+      statusEl.textContent = "Hubo un error al enviar. Intenta nuevamente.";
+      statusEl.className = "status err";
+      btn.textContent = "Inscribirme al evento";
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
